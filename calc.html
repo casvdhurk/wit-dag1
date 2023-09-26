@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="number" id="invoer1">
+    <input type="number" id="invoer2">
+
+    <!-- buttons hebben diverse event oa onclick= -->
+    <button type="button" onclick="optellen()">
+        Optellen
+    </button>
+    <button type="button" onclick="vermenigvuldigen()">
+        vermenigvuldigen
+    </button>
+    
+    <script>
+        // Code buiten een function wordt direct uitgevoerd
+        // function met een argument
+        function calculate(operation) {
+            let invoer1waarde = document.getElementById('invoer1').value;
+            let invoer2waarde = document.getElementById('invoer2').value;
+
+            // if statement,  condition -> waar/niet waar
+            if (operation == '+') {
+                return parseFloat(invoer1waarde)+ parseFloat(invoer2waarde);
+            
+            } else if (operation == '-'){
+                return parseFloat(invoer1waarde)- parseFloat(invoer2waarde);
+
+            } else if (operation == '*'){
+                return parseFloat(invoer1waarde)* parseFloat(invoer2waarde);
+            }
+        }
+
+        function optellen() {
+            // code
+            let antwoord = calculate('+');
+            alert('optellen antwoord is ' + antwoord);
+        
+        }
+
+        function vermenigvuldigen() {
+            let antwoord = calculate('*');
+            alert('optellen antwoord is ' + antwoord);
+        }
+    </script>
+
+</body>
+</html>
